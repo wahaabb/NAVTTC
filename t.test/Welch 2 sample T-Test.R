@@ -97,3 +97,47 @@ boxplot(region1_income, region2_income,
         col = c("lightyellow", "lightgray"),
         main = "Regional Income Comparison",
         ylab = "Income")
+# --------------------------------------------------
+# Example 5: Exercise Duration Comparison Between Two Groups
+# --------------------------------------------------
+
+group1_exercise <- c(45, 50, 40, 38, 60, 50, 48, 52, 55, 44)
+group2_exercise <- c(30, 25, 28, 35, 20, 30, 33, 25, 26, 31)
+
+# Perform Welch Two-Sample T-Test
+exercise_test <- t.test(group1_exercise, group2_exercise)
+
+exercise_test
+
+# Mean values
+mean(group1_exercise)
+mean(group2_exercise)
+
+# Boxplot Visualization
+boxplot(group1_exercise, group2_exercise,
+        names = c("Group 1", "Group 2"),
+        col = c("lightblue", "lightgreen"),
+        main = "Exercise Duration Comparison Between Two Groups",
+        ylab = "Duration (Minutes)")
+# --------------------------------------------------
+# Example 6: Plant Growth Comparison in Two Soil Types
+# --------------------------------------------------
+
+soil_type1_growth <- c(12.5, 15.0, 14.8, 13.3, 12.2, 14.1, 12.8, 13.5, 15.2, 13.6)
+soil_type2_growth <- c(10.2, 9.7, 11.0, 9.8, 9.5, 10.1, 10.4, 9.9, 9.8, 10.3)
+
+# Perform Welch Two-Sample T-Test
+soil_test <- t.test(soil_type1_growth, soil_type2_growth)
+
+soil_test
+
+# Mean values
+mean(soil_type1_growth)
+mean(soil_type2_growth)
+
+# Boxplot Visualization
+boxplot(soil_type1_growth, soil_type2_growth,
+        names = c("Soil Type 1", "Soil Type 2"),
+        col = c("lightgreen", "lightbrown"),
+        main = "Plant Growth Comparison in Two Soil Types",
+        ylab = "Growth (cm)")
